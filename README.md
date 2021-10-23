@@ -84,5 +84,5 @@ In case not want to train the agent but to watch the smart agent, run `trainer.p
 Please refer to `Report.ipynb` for learning more about the implementation details.
 
 ### Results
-You would get a learning curve similar to this:
+You would get a learning curve similar to the one below and the trained agent would look like the one shown in the beginning of this file (see the gif image above):
 ![Learning Curve][image2]

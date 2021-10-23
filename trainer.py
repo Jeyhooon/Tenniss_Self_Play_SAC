@@ -7,7 +7,6 @@ import pathlib
 import os
 import matplotlib.pyplot as plt
 from datetime import date
-import mlflow
 
 from unityagents import UnityEnvironment
 from agent import SACAgent
@@ -201,17 +200,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     date_time_now = utils.get_date_time_now()
-    mlflow.set_experiment("Multi_Agent_Tennis")
-    active_run_obj = mlflow.start_run()
-    exp_id = active_run_obj.info.run_id
-    mlflow.set_tag("agent", "MASAC")
-
-    config_sub_keys = ["ENV_SETTINGS"]
-    for key in config.keys():
-        if key not in config_sub_keys:
-            mlflow.log_param(key, config[key])
-        else:
-            mlflow.log_params(config[key])
 
     env_name, gamma, max_minutes, max_episodes, goal_mean_100_reward = config["ENV_SETTINGS"].values()
     env = UnityEnvironment(file_name=env_name, seed=config["SEED"][0])

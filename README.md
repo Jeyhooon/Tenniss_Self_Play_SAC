@@ -26,11 +26,17 @@ The task is episodic, and in order to solve the environment, the agents must get
 This yields a single score for each episode.
 
 The environment is considered solved, when the average (over 100 episodes) of those scores is at least +0.5.
-### Getting Started
+## Getting Started
 
-Clone this repository and install the requirements in a [virtual-env](https://docs.python.org/3/tutorial/venv.html#creating-virtual-environments) using `pip install -r requirements.txt`
+### How to Install:
+* Clone this repository: `git clone https://github.com/Jeyhooon/Tenniss_Self_Play_SAC.git`.  
+* `cd` to the repository folder (e.g.: `cd ~/git/Tenniss_Self_Play_SAC`)
+* Create a virtual environment using [virtual-env](https://docs.python.org/3/tutorial/venv.html#creating-virtual-environments) (e.g.: `virtualenv venv -p python3.6`)
+* Source the virtual environment you just create: e.g.: `source venv/bin/activate`
+* Install the requirements using pip command: `pip install -r requirements.txt`
 
-### Instructions
+### Downloading the Unity Environment
+#### (In case the one included in the repo doesn't work!)
 Download the environment from one of the links below.  You need only select the environment that matches your operating system:\
 (create a `data` directory inside the `self_play_sac` folder and copy the unzipped folder to that directory: `self_play_sac/data/`)\
     - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux.zip) \
@@ -45,7 +51,8 @@ then please use [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/
 You will **not** be able to watch the agent without enabling a virtual screen, but you will be able to train the agent.  \
 (_To watch the agent, you should follow the instructions to [enable a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md), and then download the environment for the **Linux** operating system above._)
 
-Run `trainer.py` to train the agent; hyperparameters can be changed inside the `trainer.py` script (code is adapted from: [mimoralea/gdrl](https://github.com/mimoralea/gdrl)):
+### Instructions
+Run `python trainer.py` to train the agent; hyperparameters can be changed inside the `trainer.py` script (code is adapted from: [mimoralea/gdrl](https://github.com/mimoralea/gdrl)):
 ```Python
 config = {
     "ROOT_DIR": "results",                  # directory to save the results

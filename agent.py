@@ -9,7 +9,6 @@ import os.path
 import time
 import tempfile
 import random
-import mlflow
 
 
 LEAVE_PRINT_EVERY_N_SECS = 300
@@ -113,13 +112,6 @@ class SACAgent:
         torch.nn.utils.clip_grad_norm_(self.policy_model.parameters(),
                                        self.policy_max_grad_norm)
         self.policy_optimizer.step()
-
-        log_dict = {"critic_a_loss": qa_loss.item(), "critic_b_loss": qb_loss.item(),
-                    "logpi_s": logpi_s, "logpi_sp": logpi_sp,
-                    "policy_loss": policy_loss.item(), "alpha_loss": alpha_loss.item(), "alpha": alpha}
-        for k in log_dict.keys():
-            if type(log_dict[k]) == float:
-                mlflow.log_metric(k, log_dict[k], self.episode)
 
     def interaction_step(self, states, env):
         min_samples = self.replay_buffer.batch_size * self.n_warmup_batches
@@ -226,14 +218,6 @@ class SACAgent:
             std_100_reward = np.std(np.max(self.episode_reward[-100:, :], axis=-1))
             mean_100_eval_score = np.mean(self.evaluation_scores[-100:])
             std_100_eval_score = np.std(self.evaluation_scores[-100:])
-
-            log_dict = {"mean_10_reward": mean_10_reward,
-                        "std_10_reward": std_10_reward,
-                        "mean_100_reward": mean_100_reward,
-                        "std_100_reward": std_100_reward,
-                        "mean_100_eval_score": mean_100_eval_score,
-                        "std_100_eval_score": std_100_eval_score}
-            mlflow.log_metrics(log_dict, episode)
 
             wallclock_elapsed = time.time() - training_start
             result[episode - 1] = total_step, np.max(self.episode_reward[episode - 1]), mean_100_reward, \

@@ -38,7 +38,7 @@ The environment is considered solved, when the average (over 100 episodes) of th
 ### Downloading the Unity Environment
 #### (In case your system is other than linux so the one included in the repo won't work!)
 Download the environment from one of the links below.  You need only select the environment that matches your operating system:\
-(copy the unzipped folder to this directory: `self_play_sac/data/`)\
+(copy the unzipped folder to this directory: `self_play_sac/data/` and update the `ENV_NAME` field in the config file inside the `train.py` appropriately)\
     - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux.zip) \
     - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis.app.zip) \
     - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86.zip) \

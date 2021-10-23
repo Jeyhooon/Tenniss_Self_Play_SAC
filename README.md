@@ -1,5 +1,6 @@
 [//]: # (Image References)
-[image1]: trained_sac_self_play_tennis_agent.gif "Trained Agent"
+[image1]: images/trained_sac_self_play_tennis_agent.gif "Trained Agent"
+[image2]: images/learning_curve.png "Learning Curve"
 
 # Tennis Self-paly with SAC (Continuous)
 
@@ -81,3 +82,7 @@ config = {
 In case not want to train the agent but to watch the smart agent, run `trainer.py` with `--is_training False` argument.
 
 Please refer to `Report.ipynb` for learning more about the implementation details.
+
+### Results
+You would get a learning curve similar to this:
+![Learning Curve][image2]

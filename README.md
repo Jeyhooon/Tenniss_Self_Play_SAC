@@ -79,7 +79,7 @@ config = {
         }
 }
 ```
-In case not want to train the agent but to watch the smart agent, run `trainer.py` with `--is_training False` argument.
+In case not want to train the agent but to watch the smart agent, run `trainer.py` with `--is_training False` argument and add provide the load_dir to load the trained agent; e.g.: `--load_dir results/2021_10_21/2021-10-21_20_20_36/model_final.pth`.
 
 Please refer to `Report.ipynb` for learning more about the implementation details.
 

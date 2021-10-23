@@ -52,7 +52,7 @@ You will **not** be able to watch the agent without enabling a virtual screen, b
 (_To watch the agent, you should follow the instructions to [enable a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md), and then download the environment for the **Linux** operating system above._)
 
 ### Instructions
-Run `python trainer.py` to train the agent; hyperparameters can be changed inside the `trainer.py` script (code is adapted from: [mimoralea/gdrl](https://github.com/mimoralea/gdrl)):
+Run `python trainer.py` in the terminal (with active `venv`) to train the agent; hyperparameters can be changed inside the `trainer.py` script (code is adapted from: [mimoralea/gdrl](https://github.com/mimoralea/gdrl)):
 ```Python
 config = {
     "ROOT_DIR": "results",                  # directory to save the results
